@@ -16,7 +16,7 @@ const connection = mysql.createConnection({
   database: "nodejs_test"
 });
 
-app.get("/posts", function(res) {
+app.get("/posts", function(req,res) {
   connection.query("select * from data", function(error, results) {
     if (error) throw error;
     res.send(results);
